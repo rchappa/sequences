@@ -67,6 +67,6 @@ Sospechoso 1  ADN: AAATGC
 
 Evidencia  |AGTGATG|
 ADN        |AGTGATA|
-Calces 
+Calces      ^^^^^^
 </pre>
 (Al final se muestra quien es el "culpable", aquel sospechoso que obtuvo mas puntaje)
