@@ -1,0 +1,15 @@
+# Matriz
+A:5,-1,-2,-1,-3
+C:-1,5,-3,-2,-4
+G:-2,-3,5,-2,-2
+T:-1,-2,-2,5,-1
+-:-3,-4,-2,-1,*
+          # Evidencia
+0:AGTGATG
+          # ADN Sospechosos
+1:TAG
+2:GTAG
+3:CTAG
+4:ATAG
+5:CCTAG
+6:CGTAG
