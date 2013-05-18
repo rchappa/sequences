@@ -8,9 +8,8 @@ def initme(res,path):
         for i in range(1002):
          res.append([])
          path.append([])
-         for j in range(1002):
-            res[i].append(0)
-            path[i].append("")
+         res[i] = [ 0 for j in range(1002)]
+         path[i] = ["" for j in range(1002)]
 
 # 
 # Wrapper a solve(), parametros similares 
@@ -155,11 +154,20 @@ def solve( s1, s2, m, res, path, reusecount = 0, lastl2sz = 0 ):
 
      print
 
+    path1 = path2 = path3 = ""
+    # Comentar para ahorrarse la generacion del path
+    path1,path2,path3 = rebuildpath(path,s1,s2)
+
+    return res[0][0], [path1,path2,path3]
+
+def rebuildpath(path,s1,s2):
     # rebuild path
     i = 0; j = 0
     path1 = ""  # evidencia + "-" intermedios
     path2 = ""  # adn + "-" intermedios
     path3 = ""  # identifica calces exactos
+    l1 = len(s1)
+    l2 = len(s2)
     while i < l1 and j < l2:
         p3 = " "
         if path[i][j] == "=" or path[i][j] == "\\":
@@ -187,7 +195,7 @@ def solve( s1, s2, m, res, path, reusecount = 0, lastl2sz = 0 ):
         path2 += s2[j]
         j += 1
 
-    return res[0][0], [path1,path2,path3]
+    return [path1,path2,path3]
 
 # Tomado y modificado desde https://github.com/vramiro/secuencias.git
 def parsef(fname):
